@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>For My Mahiru</title>
+  <style>
+    body {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:100vh;
+      margin:0;
+      background:linear-gradient(135deg,#fbc2eb,#a6c1ee);
+      font-family:'Poppins','Segoe UI',Arial;
+    }
+    .card {
+      background:#fff;
+      padding:28px;
+      border-radius:18px;
+      box-shadow:0 12px 30px rgba(0,0,0,0.18);
+      max-width:560px;
+      text-align:center;
+      opacity:0;
+      transform:scale(.85);
+      animation:popIn 700ms cubic-bezier(.2,.8,.2,1) forwards;
+      white-space:pre-wrap;
+    }
+    @keyframes popIn {
+      to{opacity:1;transform:scale(1);}
+    }
+    .message {
+      font-size:1.05rem;
+      color:rgb(58, 56, 56);
+      line-height:1.6;
+    }
+    .heart {
+      font-size:2rem;
+      margin-top:14px;
+      animation:beat 900ms infinite;
+    }
+    @keyframes beat {
+      0%,100%{transform:scale(1)}
+      50%{transform:scale(1.25)}
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="message" id="msg"></div>
+    <div class="heart">💗</div>
+  </div>
+
+  <script>
+    const text = 
+`"hello madam ji"  
+
+"I know you are very mad at me for not telling you this earlier"  
+
+"but truth is i want you to be mine more than anything in this world so i can't even bother thinking ki ill use you and then one day leave you"  
+
+"I had waited soo long just to get you to add me back and after that do you think i just want to use you and leave you like a piece of trash?"  
+
+"I adore you mahi, I respect you mahi, I love you mahi"  
+
+"so please don't think that i am just using you i am not like that"  
+
+"the feelings i have really mess up my mind and heart and i just want to be with you" 
+
+"I wont joke about such sensitive things again please come back to me im aching for you jaan,"  
+
+"i miss you so much mahi"  
+`;
+
+    const out = document.getElementById('msg');
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        out.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40); // typing speed
+      }
+    }
+    window.addEventListener('load', () => {
+      setTimeout(typeWriter, 200);
+    });
+  </script>
+</body>
+</html>
